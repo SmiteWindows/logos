@@ -151,7 +151,7 @@ fn parse_array(lexer: &mut Lexer<'_, Token>) -> Result<Value> {
                 return Err((
                     "unexpected token here (context: array)".to_owned(),
                     lexer.span(),
-                ))
+                ));
             }
         }
         awaits_comma = !awaits_value;
@@ -182,7 +182,7 @@ fn parse_object(lexer: &mut Lexer<'_, Token>) -> Result<Value> {
                         return Err((
                             "unexpected token here, expecting ':'".to_owned(),
                             lexer.span(),
-                        ))
+                        ));
                     }
                 }
                 let value = parse_value(lexer)?;
@@ -193,7 +193,7 @@ fn parse_object(lexer: &mut Lexer<'_, Token>) -> Result<Value> {
                 return Err((
                     "unexpected token here (context: object)".to_owned(),
                     lexer.span(),
-                ))
+                ));
             }
         }
         awaits_comma = !awaits_key;
@@ -217,10 +217,10 @@ fn main() {
 
             let a = colors.next();
 
-            Report::build(ReportKind::Error, (&filename,span.clone()))
+            Report::build(ReportKind::Error, (&filename, span.clone()))
                 .with_message("Invalid JSON")
                 .with_label(
-                    Label::new((&filename, span.clone()))
+                    Label::new((&filename, span))
                         .with_message(msg)
                         .with_color(a),
                 )

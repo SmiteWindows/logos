@@ -36,8 +36,8 @@ use quote::ToTokens;
 use proc_macro2::{TokenStream, TokenTree};
 use quote::quote;
 use syn::spanned::Spanned;
-use syn::{parse_quote, LitBool};
 use syn::{Fields, ItemEnum};
+use syn::{LitBool, parse_quote};
 
 use crate::graph::Config;
 use crate::leaf::VariantKind;
@@ -492,7 +492,7 @@ fn generate_graphs(path_str: &str, name: &str, graph: &Graph) -> Result<(), Box<
             return Err(String::from(
                 "Export path must end in '.dot' or '.mmd', or it must be a directory.",
             )
-            .into())
+            .into());
         }
         None => {
             let dot_path = path.join(format!("{name}.dot"));

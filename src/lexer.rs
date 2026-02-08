@@ -1,5 +1,5 @@
-use super::internal::LexerInternal;
 use super::Logos;
+use super::internal::LexerInternal;
 use crate::source::{self, Source};
 
 use core::fmt::{self, Debug};

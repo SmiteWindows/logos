@@ -4,10 +4,10 @@ use std::borrow::Cow;
 use syn::spanned::Spanned;
 use syn::{Attribute, GenericParam, Ident, Lit, LitBool, Meta, Type};
 
+use crate::LOGOS_ATTR;
 use crate::error::Errors;
 use crate::leaf::{Callback, InlineCallback};
-use crate::util::{expect_punct, MaybeVoid};
-use crate::LOGOS_ATTR;
+use crate::util::{MaybeVoid, expect_punct};
 
 mod definition;
 mod error_type;
@@ -21,7 +21,7 @@ pub use self::error_type::ErrorType;
 pub use self::ignore_flags::IgnoreFlags;
 use self::nested::{AttributeParser, Nested, NestedValue};
 pub use self::subpattern::Subpatterns;
-use self::type_params::{replace_lifetime, traverse_type, TypeParams};
+use self::type_params::{TypeParams, replace_lifetime, traverse_type};
 
 #[derive(Default)]
 pub struct Parser {

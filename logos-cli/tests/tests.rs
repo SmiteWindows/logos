@@ -2,7 +2,7 @@ use insta::assert_snapshot;
 use std::fs::read_to_string;
 
 use assert_cmd::Command;
-use assert_fs::{fixture::FileWriteStr, NamedTempFile};
+use assert_fs::{NamedTempFile, fixture::FileWriteStr};
 
 const INPUT_FILE: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/tests/data/input.rs");
 

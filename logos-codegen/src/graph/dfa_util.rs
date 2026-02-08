@@ -1,7 +1,7 @@
 use std::{collections::HashSet, iter};
 
 use regex_automata::{
-    dfa::{dense::DFA, Automaton},
+    dfa::{Automaton, dense::DFA},
     util::primitives::StateID,
 };
 

@@ -1,5 +1,5 @@
 use proc_macro2::{Spacing, Span, TokenStream, TokenTree};
-use quote::{quote, ToTokens};
+use quote::{ToTokens, quote};
 use syn::Ident;
 
 /// Analog to Option<TokenStream>, except when put into the quote!

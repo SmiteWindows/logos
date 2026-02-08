@@ -1,10 +1,10 @@
 use proc_macro2::{Span, TokenStream};
-use syn::spanned::Spanned;
 use syn::Ident;
+use syn::spanned::Spanned;
 
 use crate::leaf::Callback;
-use crate::parser::nested::NestedValue;
 use crate::parser::Parser;
+use crate::parser::nested::NestedValue;
 
 pub struct ErrorType {
     pub ty: TokenStream,

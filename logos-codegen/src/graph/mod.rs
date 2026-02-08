@@ -2,16 +2,16 @@ use std::ascii::escape_default;
 use std::collections::HashSet;
 use std::fmt;
 use std::{
-    collections::{hash_map::Entry, HashMap},
+    collections::{HashMap, hash_map::Entry},
     ops::RangeInclusive,
 };
 
-use dfa_util::{get_states, iter_matches, OwnedDFA};
+use dfa_util::{OwnedDFA, get_states, iter_matches};
 use regex_automata::{
-    dfa::{dense::DFA, Automaton, StartKind},
+    Anchored, MatchKind,
+    dfa::{Automaton, StartKind, dense::DFA},
     nfa::thompson::NFA,
     util::primitives::StateID,
-    Anchored, MatchKind,
 };
 
 use crate::leaf::{Leaf, LeafId};

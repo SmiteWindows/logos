@@ -1,5 +1,5 @@
-use logos::source::Source;
 use logos::Logos;
+use logos::source::Source;
 
 use std::fmt;
 use std::ops::Range;

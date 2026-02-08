@@ -1,7 +1,7 @@
 use std::fmt::Write;
 
 use proc_macro2::{Ident, Span};
-use syn::{spanned::Spanned, LitByteStr, LitStr};
+use syn::{LitByteStr, LitStr, spanned::Spanned};
 
 use crate::leaf::Callback;
 use crate::parser::nested::NestedValue;

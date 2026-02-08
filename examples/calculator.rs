@@ -80,8 +80,8 @@ impl Expr {
 
 #[allow(clippy::let_and_return)]
 /* ANCHOR: parser */
-fn parser<'src>(
-) -> impl Parser<'src, &'src [Token], Expr, chumsky::extra::Err<chumsky::error::Simple<'src, Token>>>
+fn parser<'src>()
+-> impl Parser<'src, &'src [Token], Expr, chumsky::extra::Err<chumsky::error::Simple<'src, Token>>>
 {
     recursive(|p| {
         let atom = {

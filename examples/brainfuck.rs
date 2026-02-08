@@ -118,7 +118,10 @@ pub fn execute(code: &str) {
     }
 
     if !queue.is_empty() {
-        panic!("Unmatched conditional forward jump at positions {:?}, expecting a closing ']' for each of them", queue);
+        panic!(
+            "Unmatched conditional forward jump at positions {:?}, expecting a closing ']' for each of them",
+            queue
+        );
     }
 
     /* ANCHOR: fsm */

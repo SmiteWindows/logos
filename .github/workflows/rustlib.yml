@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         rust:
-        - 1.80.0 # current MSRV
+        - 1.93.0 # current MSRV
         - stable
         - nightly
         os:

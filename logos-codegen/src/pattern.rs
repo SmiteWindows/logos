@@ -3,8 +3,8 @@ use std::{fmt, sync::LazyLock};
 use crate::parser::Literal;
 
 use regex_syntax::{
-    hir::{Dot, Hir, HirKind},
     ParserBuilder,
+    hir::{Dot, Hir, HirKind},
 };
 
 static DOT_HIRS: LazyLock<[Hir; 6]> = LazyLock::new(|| {

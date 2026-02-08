@@ -3,7 +3,7 @@ use std::fmt::{self, Debug, Display};
 
 use proc_macro2::{Span, TokenStream};
 use regex_automata::PatternID;
-use syn::{spanned::Spanned, Ident};
+use syn::{Ident, spanned::Spanned};
 
 use crate::pattern::Pattern;
 

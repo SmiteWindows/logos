@@ -1,7 +1,7 @@
 use std::collections::HashSet;
 
 use proc_macro2::TokenStream;
-use quote::{quote, ToTokens, TokenStreamExt};
+use quote::{ToTokens, TokenStreamExt, quote};
 
 use crate::{
     generator::byte_to_tokens,
