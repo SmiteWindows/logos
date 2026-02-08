@@ -2,7 +2,7 @@
 name = "tests-target-cfg"
 publish = false
 version = "0.0.0"
-edition = "2021"
+edition = "2024"
 
 [workspace]
 
