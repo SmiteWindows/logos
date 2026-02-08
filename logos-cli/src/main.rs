@@ -15,10 +15,10 @@ use proc_macro2::{LexError, TokenStream};
 #[clap(author, version, about, long_about = None)]
 pub struct Args {
     /// Input file to process
-    #[clap(parse(from_os_str))]
+    #[clap(value_parser)]
     input: PathBuf,
     /// Path to write output. By default output is printed to stdout.
-    #[clap(long, short, parse(from_os_str))]
+    #[clap(long, short, value_parser)]
     output: Option<PathBuf>,
     /// Checks whether the output file is up-to-date instead of writing to it. Requires --output to be specified.
     #[clap(long, requires = "output")]

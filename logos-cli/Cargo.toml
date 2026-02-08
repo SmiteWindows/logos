@@ -1,15 +1,15 @@
 [dependencies]
 anyhow = "1.0.57"
-clap = {version = "3.1.18", features = ["derive"]}
-fs-err = "2.7.0"
-logos-codegen = {version = "0.16.1", path = "../logos-codegen"}
+clap = { version = "4.5.57", features = ["derive"] }
+fs-err = "3.3.0"
+logos-codegen = { version = "0.16.1", path = "../logos-codegen" }
 proc-macro2 = "1.0.39"
 
 [dev-dependencies]
 assert_cmd = "2.0.4"
 assert_fs = "1.0.7"
 insta = "1.43.1"
-predicates = "2.1.1"
+predicates = "3.1.3"
 
 [features]
 # Enables debug messages

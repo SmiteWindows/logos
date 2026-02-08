@@ -134,7 +134,7 @@ impl Source for str {
             self.len()
         );
 
-        self.get_unchecked(range)
+        unsafe { self.get_unchecked(range) }
     }
 
     #[inline]
@@ -191,7 +191,7 @@ impl Source for [u8] {
             self.len()
         );
 
-        self.get_unchecked(range)
+        unsafe { self.get_unchecked(range) }
     }
 
     #[inline]
@@ -227,7 +227,7 @@ where
 
     #[cfg(not(feature = "forbid_unsafe"))]
     unsafe fn slice_unchecked(&self, range: Range<usize>) -> Self::Slice<'_> {
-        self.deref().slice_unchecked(range)
+        unsafe { self.deref().slice_unchecked(range) }
     }
 
     fn is_boundary(&self, index: usize) -> bool {
@@ -267,7 +267,7 @@ impl<'source> Chunk<'source> for u8 {
     #[inline]
     #[cfg(not(feature = "forbid_unsafe"))]
     unsafe fn from_ptr(ptr: *const u8) -> Self {
-        *ptr
+        unsafe { *ptr }
     }
 
     #[inline]
@@ -283,7 +283,7 @@ impl<'source, const N: usize> Chunk<'source> for &'source [u8; N] {
     #[inline]
     #[cfg(not(feature = "forbid_unsafe"))]
     unsafe fn from_ptr(ptr: *const u8) -> Self {
-        &*(ptr as *const [u8; N])
+        unsafe { &*(ptr as *const [u8; N]) }
     }
 
     #[inline]

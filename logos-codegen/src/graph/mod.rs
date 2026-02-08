@@ -359,7 +359,7 @@ impl Graph {
     }
 
     /// Iterate over all of the states of the graph
-    pub fn iter_states(&self) -> impl Iterator<Item = State> {
+    pub fn iter_states(&self) -> impl Iterator<Item = State> + use<> {
         (0..self.states.len()).map(State)
     }
 

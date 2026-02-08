@@ -217,10 +217,10 @@ fn main() {
 
             let a = colors.next();
 
-            Report::build(ReportKind::Error, &filename, 12)
-                .with_message("Invalid JSON".to_string())
+            Report::build(ReportKind::Error, (&filename,span.clone()))
+                .with_message("Invalid JSON")
                 .with_label(
-                    Label::new((&filename, span))
+                    Label::new((&filename, span.clone()))
                         .with_message(msg)
                         .with_color(a),
                 )
